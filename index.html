@@ -1,0 +1,35 @@
+html
+   <!DOCTYPE html>
+   <html>
+   <head>
+     <!-- 设置 0 秒后跳转到目标网页 -->
+     <meta http-equiv="refresh" content="0; url=http://192.168.43.216/">
+     
+     <!-- 自定义背景样式 -->
+     <style>
+       body {
+         background: url('https://bj.bcebos.com/bjh-pixel/17116775760533738820_0_ainote_new.jpg') no-repeat center fixed;
+         background-size: cover;
+         margin: 0;
+         height: 100vh;
+       }
+       /* 加载时的过渡效果 */
+       body::before {
+         content: "";
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: rgba(0,0,0,0.5);
+         z-index: -1;
+       }
+     </style>
+   </head>
+   <body>
+     <!-- 可添加加载提示（可选） -->
+     <div style="color: white; text-align: center; padding-top: 50vh;">
+       <h1>正在跳转到 Google...</h1>
+     </div>
+   </body>
+   </html>
