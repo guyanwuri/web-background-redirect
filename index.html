@@ -1,35 +1,40 @@
-html
-   <!DOCTYPE html>
-   <html>
-   <head>
-     <!-- 设置 0 秒后跳转到目标网页 -->
-     <meta http-equiv="refresh" content="0; url=http://192.168.43.216/">
-     
-     <!-- 自定义背景样式 -->
-     <style>
-       body {
-         background: url('https://i.imgur.com/q3jg1wrd.jpg') no-repeat center fixed;
-         background-size: cover;
-         margin: 0;
-         height: 100vh;
-       }
-       /* 加载时的过渡效果 */
-       body::before {
-         content: "";
-         position: fixed;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         background: rgba(0,0,0,0.5);
-         z-index: -1;
-       }
-     </style>
-   </head>
-   <body>
-     <!-- 可添加加载提示（可选） -->
-     <div style="color: white; text-align: center; padding-top: 50vh;">
-       <h1>正在跳转到 Google...</h1>
-     </div>
-   </body>
-   </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting...</title>
+  <meta charset="UTF-8">
+  <!-- 双重跳转保障 -->
+  <meta http-equiv="refresh" content="0; url=http://192.168.43.216/">
+  <style>
+    /* 全局背景样式 */
+    html body {
+      background: url('https://i.imgur.com/8gsGsy7C.jpg') no-repeat center fixed !important;
+      background-size: cover !important;
+      margin: 0;
+      height: 100vh;
+    }
+    /* 移动端适配 */
+    @media (max-width: 768px) {
+      html body {
+        background-size: contain !important;
+        background-attachment: scroll !important;
+      }
+    }
+  </style>
+  <!-- JavaScript跳转备用 -->
+  <script>
+    window.location.href = "https://www.google.com";
+  </script>
+</head>
+<body>
+  <!-- 加载提示 -->
+  <div id="loader" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999;">
+    <div style="color:white; text-align:center; padding-top:40vh;">
+      <h2>Loading Your Custom Page...</h2>
+    </div>
+  </div>
+  <script>
+    setTimeout(() => document.getElementById("loader").remove(), 1500);
+  </script>
+</body>
+</html>
